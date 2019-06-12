@@ -1,7 +1,7 @@
-# Project scaffold
+# Project Start Template
 
-My simple scaffold for small projects.
-Curently project under construction.
+My simple start template for small projects.
+Curently project in progress.
 
 ## Usage
 

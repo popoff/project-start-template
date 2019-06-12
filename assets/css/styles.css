@@ -413,7 +413,7 @@ H1, H2, H3, H4, H5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: khaki;
+  background: pink;
   border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .nav__item {

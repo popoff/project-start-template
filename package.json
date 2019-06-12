@@ -1,31 +1,31 @@
 {
-  "name": "project-scaffold",
+  "name": "project-start-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.html",
-  "author": "yoksel",
+  "author": "Mykola Popov",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yoksel/project-scaffold.git"
+    "url": "https://github.com/popoff/project-start-template.git"
   },
   "devDependencies": {
-    "autoprefixer": "^6.3.5",
-    "browser-sync": "^2.11.2",
-    "colors": "^1.1.2",
-    "css-mqpacker": "^4.0.1",
-    "cssnano": "^3.5.2",
-    "del": "^2.2.0",
+    "autoprefixer": "^9.4.10",
+    "browser-sync": "^2.26.3",
+    "colors": "^1.3.3",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "del": "^4.0.0",
     "editorconfig-tools": "^0.1.1",
-    "gulp": "^3.9.1",
-    "gulp-copy": "0.0.2",
+    "gulp": "^4.0.2",
+    "gulp-copy": "4.0.1",
     "gulp-gh-pages": "^0.5.4",
-    "gulp-imagemin": "^2.4.0",
-    "gulp-include": "^2.1.0",
-    "gulp-postcss": "^6.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
-    "imagemin-pngquant": "^4.2.2"
+    "gulp-imagemin": "^5.0.3",
+    "gulp-include": "^2.3.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-ruby-sass": "^4.0.0",
+    "imagemin-pngquant": "^7.0.0"
   },
   "scripts": {
     "start": "gulp serve",

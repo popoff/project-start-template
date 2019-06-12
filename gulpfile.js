@@ -44,6 +44,12 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('assets/css'));
 });
 
+gulp.task('sass', () =>
+    sass('src/scss/styles.scss')
+        .on('error', sass.logError)
+        .pipe(gulp.dest('assets/css'))
+);
+
 // JS
 gulp.task('js', function () {
   return gulp.src('src/js/**/*.js')
@@ -76,17 +82,19 @@ gulp.task('include', function() {
 });
 
 // WATCH SASS, PREPROCESS AND RELOAD
-gulp.task('serve', ['sass'], function() {
+gulp.task('serve', gulp.series('sass', function() {
   browserSync({
     server: {
       baseDir: '.'
     }
   });
 
-  gulp.watch(['src/**/*.scss'], ['sass']);
-  gulp.watch(['src/**/*.html'], ['include']);
-  gulp.watch(['src/**/*.js'], ['js']);
-});
+  gulp.task('watch', function() {
+    gulp.watch(['src/**/*.scss'], gulp.series('sass'));
+    gulp.watch(['src/**/*.html'], gulp.series('include'));
+    gulp.watch(['src/**/*.js'], gulp.series('js'));
+  });
+}));
 
 // CLEAN BUILD
 gulp.task('clean', function(){
@@ -111,7 +119,7 @@ gulp.task('ghPages', function() {
     .pipe(ghPages());
 });
 
-gulp.task('default', function() {
+gulp.task('default', gulp.series(function(done) {
   console.log(colors.rainbow('⬤  ================================ ⬤\n'));
   console.log('  AVAILABLE COMMANDS:');
   console.log('  ' + colors.cyan('-------------------\n'));
@@ -122,4 +130,5 @@ gulp.task('default', function() {
   console.log('  ' + colors.cyan('npm run deploy') +
               ' — make build and publish project to Github Pages');
   console.log(colors.rainbow('\n⬤  ================================ ⬤'));
-});
+  done();
+}));
